@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+FAQ
+
+{% endblock %}
+
+{% block main %}
+
+<body>
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-list">
+            <h2>Questions</h2>
+            <ul>
+                <li><a href="#q1">Who Created This Calculator and Why?</a></li>
+                <li><a href="#q2">What is the Purpose of This Calculator?</a></li>
+                <li><a href="#q3">How Accurate is the Body Fat Percentage (BFP) Measurement?</a></li>
+                <li><a href="#q4">How Do I Know Which Activity Level to Choose?</a></li>
+                <li><a href="#q5">What Happens if I Don’t Know My Body Fat Percentage?</a></li>
+                <li><a href="#q6">Can I Trust the Results from This Calculator?</a></li>
+                <li><a href="#q7">Why Do the Calorie Recommendations Seem Different from Other Calculators?</a></li>
+                <li><a href="#q8">Can I Manually Adjust the Values if I Think They’re Wrong?</a></li>
+                <li><a href="#q9">How Should I Use the Results from This Calculator?</a></li>
+                <li><a href="#q10">What Are the Limitations of This Calculator?</a></li>
+                <li><a href="#q11">Why Do I Need to Know My Lean Body Mass (LBM)?</a></li>
+                <li><a href="#q12">How Often Should I Update My Data in the Calculator?</a></li>
+                <li><a href="#q13">Is It Safe to Follow the Calorie Recommendations Provided?</a></li>
+                <li><a href="#q14">What If I Lose Weight Too Quickly or Too Slowly?</a></li>
+                <li><a href="#q15">Why Does the Activity Level Section Mention Outdated Research?</a></li>
+                <li><a href="#q16">Can I Use This Calculator for Gaining Weight or Building Muscle?</a></li>
+                <li><a href="#q17">Why Do I Need to Trust the Charts for BFP Estimation?</a></li>
+                <li><a href="#q18">How Do I Measure My Height and Weight Accurately for the Best Results?</a></li>
+                <li><a href="#q19">What Should I Do if I Don’t See Any Progress?</a></li>
+            </ul>
+        </div>
+
+        <div class="faq-answers">
+            <h2>Answers</h2>
+
+            <div id="q1" class="faq-item">
+                <h3>Who Created This Calculator and Why?</h3>
+                <p>Hey, I'm Selim. I've been into bodybuilding since I was 12 years old and have been finding stuff to
+                    make
+                    or calculate to procrastinate actually working out ever since then. Hence, why this was created,
+                    along
+                    with being my final project for the CS50x program :).</p>
+            </div>
+
+            <div id="q2" class="faq-item">
+                <h3>What is the Purpose of This Calculator?</h3>
+                <p>The purpose of this calculator is to help you set a plan for a cut while losing as little muscle as
+                    possible. It assumes that you should lose your BFP% / 20 percent of your body weight, which is based
+                    on
+                    a study that I admittedly forgot (but you can trust me, I did sports science in IB).</p>
+            </div>
+
+            <div id="q3" class="faq-item">
+                <h3>How Accurate is the Body Fat Percentage (BFP) Measurement?</h3>
+                <p>It depends on how well your eyes work. If you think you’re overestimating, add 2-3% to whatever
+                    number
+                    you come up with.</p>
+            </div>
+
+            <div id="q4" class="faq-item">
+                <h3>How Do I Know Which Activity Level to Choose?</h3>
+                <p>If you're unsure, pick an activity level that feels closest to your typical day. If you’re overly
+                    optimistic about how active you are, you might end up overestimating how many calories you burn.</p>
+            </div>
+
+            <div id="q5" class="faq-item">
+                <h3>What Happens if I Don’t Know My Body Fat Percentage?</h3>
+                <p>If you don’t know your BFP, the calculator will use a different method to estimate your maintenance
+                    calories. It’s less accurate, but it’s better than guessing blindly.</p>
+            </div>
+
+            <div id="q6" class="faq-item">
+                <h3>Can I Trust the Results from This Calculator?</h3>
+                <p>Take everything with a grain of salt. TL;DR: These are estimates, and while they’re based on science,
+                    your body isn’t a simple math equation.</p>
+            </div>
+
+            <div id="q7" class="faq-item">
+                <h3>Why Do the Calorie Recommendations Seem Different from Other Calculators?</h3>
+                <p>The other ones suck. Kidding, but really, this calculator uses the Katch-McArdle equation, which is a
+                    bit
+                    more precise—especially if you know your body fat percentage.</p>
+            </div>
+
+            <div id="q8" class="faq-item">
+                <h3>Can I Manually Adjust the Values if I Think They’re Wrong?</h3>
+                <p>I’m too lazy to code this in (I admit it). But feel free to tweak the numbers in your head if you
+                    think
+                    they’re off.</p>
+            </div>
+
+            <div id="q9" class="faq-item">
+                <h3>How Should I Use the Results from This Calculator?</h3>
+                <p>Use an app like MyFitnessPal to track your calories. If your weight loss seems way off after two
+                    weeks,
+                    adjust accordingly. Keep in mind that the first two weeks can be unreliable as you lose water weight
+                    and
+                    stuff.</p>
+            </div>
+
+            <div id="q10" class="faq-item">
+                <h3>What Are the Limitations of This Calculator?</h3>
+                <p>This calculator provides estimates, not guarantees. It assumes everyone is a bit average, which we
+                    both
+                    know isn't true, so consider your unique factors when using it.</p>
+            </div>
+
+            <div id="q11" class="faq-item">
+                <h3>Why Do I Need to Know My Lean Body Mass (LBM)?</h3>
+                <p>Your LBM helps to calculate how many calories your body burns at rest, which is crucial for
+                    estimating
+                    your maintenance calories more accurately.</p>
+            </div>
+
+            <div id="q12" class="faq-item">
+                <h3>How Often Should I Update My Data in the Calculator?</h3>
+                <p>Once is enough, really. Your LBM and BFP% don’t change drastically overnight, so don’t stress about
+                    updating constantly.</p>
+            </div>
+
+            <div id="q13" class="faq-item">
+                <h3>Is It Safe to Follow the Calorie Recommendations Provided?</h3>
+                <p>It should be, but always consult a health professional before making any drastic changes to your diet
+                    or
+                    exercise routine.</p>
+            </div>
+
+            <div id="q14" class="faq-item">
+                <h3>What If I Lose Weight Too Quickly or Too Slowly?</h3>
+                <p>If your weight loss is off after two weeks, start worrying. The first two weeks can be unpredictable
+                    due
+                    to water weight fluctuations, so give it some time before you make adjustments.</p>
+            </div>
+
+            <div id="q15" class="faq-item">
+                <h3>Why Does the Activity Level Section Mention Outdated Research?</h3>
+                <p>We have no other research to go on, but it’s optional and still a decent rule of thumb (ish).
+                    Consider it
+                    a starting point rather than gospel.</p>
+            </div>
+
+            <div id="q16" class="faq-item">
+                <h3>Can I Use This Calculator for Gaining Weight or Building Muscle?</h3>
+                <p>Not sure how you would for now, but I plan on adding this functionality later after I learn proper UX
+                    /
+                    web design. Stay tuned!</p>
+            </div>
+
+            <div id="q17" class="faq-item">
+                <h3>Why Do I Need to Trust the Charts for BFP Estimation?</h3>
+                <p>The charts are there to give you a rough idea. No method outside of advanced medical imaging is going
+                    to
+                    be 100% accurate, so use them as a general guide rather than an absolute measure.</p>
+            </div>
+
+            <div id="q18" class="faq-item">
+                <h3>How Do I Measure My Height and Weight Accurately for the Best Results?</h3>
+                <p>Measure your height and weight in the morning, naked (I know, eewwww), and after using the restroom.
+                    This
+                    gives you the most consistent baseline.</p>
+            </div>
+
+            <div id="q19" class="faq-item">
+                <h3>What Should I Do if I Don’t See Any Progress?</h3>
+                <p>If you’re not seeing progress, revisit your inputs and consider adjusting your calorie intake or
+                    activity
+                    level. Sometimes, it’s just a matter of tweaking the numbers and being patient.</p>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+{% endblock %}

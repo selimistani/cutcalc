@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Cutcalc
+{% endblock %}
+
+{% block main %}
+<div class="form-container">
+    <form method="POST" action="/">
+        <!-- BFP Input Row -->
+        <div class="form-row">
+            <input type="text" name="current_bfp" placeholder="Current BFP%" class="input-field" autofocus>
+            <button type="button" class="bfp-button" onclick="window.location.href='/bfp'">BFP?</button>
+            <input type="text" name="target_bfp" placeholder="Target BFP%" class="input-field">
+        </div>
+
+        <!-- Weight -->
+        <div class="form-row">
+            <label for="weight">Weight:</label>
+            <select name="weight_unit" id="weight_unit" class="select-field">
+                <option value="kg">KG</option>
+                <option value="lbs">LBS</option>
+            </select>
+            <input type="text" name="weight" id="weight" placeholder="Enter Weight" class="input-field">
+        </div>
+
+        <!-- Activity Level -->
+        <div class="form-row">
+            <label for="activity_level">Activity Level:</label>
+            <select name="activity_level" id="activity_level" class="select-field">
+                {% for level in activity_levels %}
+                <option value="{{ level.value }}">{{ level.label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Optional Section Trigger -->
+        <div class="form-row extra-options-toggle">
+            <label for="extra_options" class="toggle-label">Show Extra Options:</label>
+            <label class="switch">
+                <input type="checkbox" id="extra_options" name="extra_options" value="on"
+                    onclick="toggleOptionalFields()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <!-- Optional Fields -->
+        <div id="optional-fields" class="optional-fields" style="display: none;">
+            <!-- % of weight loss as fat -->
+            <div class="form-row">
+                <label for="fat_loss_percentage">% of Weight Loss as Fat:</label>
+                <input type="text" name="fat_loss_percentage" id="fat_loss_percentage" placeholder="100%"
+                    class="input-field">
+            </div>
+
+            <!-- Custom Macro Split -->
+            <div class="form-row">
+                <label for="macro_carbs">Carbs (%):</label>
+                <input type="text" name="macro_carbs" id="macro_carbs" placeholder="Default" class="input-field">
+            </div>
+            <div class="form-row">
+                <label for="macro_protein">Protein (%):</label>
+                <input type="text" name="macro_protein" id="macro_protein" placeholder="Default" class="input-field">
+            </div>
+            <div class="form-row">
+                <label for="macro_fat">Fats (%):</label>
+                <input type="text" name="macro_fat" id="macro_fat" placeholder="Default" class="input-field">
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-row">
+            <button type="submit" class="submit-button">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function toggleOptionalFields() {
+        const optionalFields = document.getElementById('optional-fields');
+        optionalFields.style.display = optionalFields.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
+
+<style>
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(155px);
+        -ms-transform: translateX(155px);
+        transform: translateX(155px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+</style>
+{% endblock %}

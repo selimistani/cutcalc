@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+BFP
+{% endblock %}
+
+{% block main %}
+<div class="content-container">
+    <h1 class="page-title">So, You Want to Measure Your Body Fat Percentage?</h1>
+
+    <p class="intro-text">
+        Let's get one thing straight: getting an exact measurement of your body fat percentage is like trying to catch a
+        greased pig at a county fair. Unless you're willing to hop into an MRI machine (and trust me, if a hospital lets
+        you use an MRI for something this trivial, you should probably find another hospital), you're not going to get a
+        truly accurate number. But that's okay! We’re not here for precision down to the last decimal point. Instead,
+        let's keep things simple with a good old chart to get a ballpark figure. Remember that everybody has different
+        fat distribution, so don't only look at the midsection but consider every part of your body from your arms to
+        your legs.
+    </p>
+
+    <p class="intro-text">
+        Below, you'll find a chart that will help you estimate your body fat percentage based on visual cues. It’s not
+        rocket science, but it’s good enough for our purposes.
+    </p>
+
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/bfp.webp') }}" alt="Body Fat Percentage Chart"
+            class="bfp-image">
+    </div>
+
+    <p class="outro-text">
+        Remember, this chart is just an estimate. Your body is unique, and numbers can only tell you so much. So, use
+        this visual as a guide, and don’t stress about hitting a specific percentage. It’s all about getting a general
+        idea so you can make informed decisions on your fitness journey.
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Results
+{% endblock %}
+
+{% block main %}
+<div class="content-container">
+    <h1>Summary</h1>
+
+    <div class="image-container">
+        <div class="graph">
+            <h3>Weight Loss Over Time</h3>
+            <img src="{{ url_for('serve_image', session_id=session_id, image_type='weight_loss_image') }}"
+                alt="Weight Loss Graph">
+        </div>
+        <div class="graph">
+            <h3>Body Fat Percentage Change Over Time</h3>
+            <img src="{{ url_for('serve_image', session_id=session_id, image_type='bfp_image') }}"
+                alt="Body Fat Percentage Change Graph">
+        </div>
+    </div>
+
+    <h1>Results</h1>
+
+    <div class="download-link">
+        <a href="{{ url_for('download_csv', session_id=session_id) }}" class="download-btn">Download Results as CSV</a>
+    </div>
+
+    <div class="results-summary">
+        {% for result in results %}
+        <div class="week-result">
+            <h2>Week {{ result.week }}</h2>
+            <p><strong>TDEE:</strong> {{ result.tdee }} kcal/day</p>
+            <p><strong>Caloric Deficit:</strong> {{ result.caloric_deficit }} kcal/day</p>
+            <p><strong>Caloric Goal:</strong> {{ result.caloric_goal }} kcal/day</p>
+            <p><strong>Weight Loss Goal:</strong> {{ result.weight_loss_goal }} kg</p>
+            <p><strong>New BFP:</strong> {{ result.new_bfp }}%</p>
+            <p><strong>New Weight:</strong> {{ result.new_weight }} kg</p>
+            <h3>Macros</h3>
+            <ul>
+                <li><strong>Protein:</strong> {{ result.macros.protein }} g ({{ result.macros_percent.protein }}%)</li>
+                <li><strong>Carbs:</strong> {{ result.macros.carbs }} g ({{ result.macros_percent.carb }}%)</li>
+                <li><strong>Fats:</strong> {{ result.macros.fats }} g ({{ result.macros_percent.fat }}%)</li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .download-link {
+        text-align: right;
+        margin-bottom: 20px;
+    }
+
+    .download-btn {
+        background-color: #00A8E8;
+        color: #FFFFFF;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        margin: 0 auto 20px auto;
+    }
+
+    .download-btn:hover {
+        background-color: #007BB5;
+    }
+
+    .content-container {
+        padding: 20px;
+        background-color: #1F1F1F;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        color: #FFFFFF;
+    }
+
+    .results-summary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .week-result {
+        flex: 1 1 45%;
+        background-color: #2A2A2A;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+    }
+
+    .week-result h2 {
+        color: #00A8E8;
+        margin-bottom: 15px;
+    }
+
+    .week-result h3 {
+        color: #FFD700;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .week-result p {
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .week-result ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .week-result ul li {
+        margin-bottom: 8px;
+    }
+
+    .graph {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .graph h3 {
+        color: #FFD700;
+        margin-bottom: 10px;
+    }
+
+    .graph img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+</style>
+{% endblock %}

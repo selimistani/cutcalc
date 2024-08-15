@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Calories
+{% endblock %}
+
+{% block main %}
+<div class="content-container">
+    <h1 class="page-title">How We Calculate Your Maintenance Calories</h1>
+
+    <p class="intro-text">
+        So, you want to know how many calories you should be consuming to maintain your current weight? The calculator
+        we’ve put together uses a few different methods to estimate your maintenance calories, and well, it’s not that
+        much more accurate than trying to wing it, if we're really being honest.
+    </p>
+
+    <h2 class="section-title">Katch-McArdle Equation</h2>
+
+    <p class="section-text">
+        If you’ve filled out the body fat percentage field (and why wouldn’t you?), the calculator will opt for the
+        Katch-McArdle Formula, which is basically the gold standard in the world of calorie estimation. This formula
+        requires you to know your Lean Body Mass (LBM), because unlike some other formulas, it actually cares about
+        what’s underneath the surface.
+    </p>
+
+    <div class="formula-container">
+        <h3 class="formula-title">Katch-McArdle Equation</h3>
+        <p class="section-text">To calculate your Basal Metabolic Rate (BMR), we use the Katch-McArdle equation:</p>
+
+        <div class="formula-wrapper">
+            <p class="formula"><strong>BMR = 370 + (21.6 * LBM [kg])</strong></p>
+        </div>
+
+        <p class="section-text">
+            Don’t worry, you don’t need to whip out your calculator—this is all done automatically for you.
+        </p>
+    </div>
+
+    <h2 class="section-title">Weight Loss Calculation: The Rule of Thumb</h2>
+
+    <p class="section-text">
+        We also incorporate a rule of thumb to estimate how much of your body weight you can safely lose without
+        sacrificing muscle mass. This guideline suggests that you can lose up to <strong>BFP% / 20</strong> of your body
+        weight.
+        While this is a trusted rule, it's important to remember that it isn't exact, but it provides a useful
+        estimation.
+    </p>
+
+    <h2 class="section-title">Activity Level</h2>
+
+    <p class="section-text">
+        Now, let’s talk about your activity level. This value helps us figure out how many extra calories you’re burning
+        each day (on top of your BMR) by just being your fabulous, active self. But here’s the kicker: this number is
+        pretty damn speculative. Even the World Health Organization (WHO) isn’t thrilled that people are still using
+        these multipliers, which were based on studies from the 1950s involving Italian men. Not exactly cutting-edge
+        science, right?
+    </p>
+
+    <p class="section-text">
+        If you’re the cautious type, you might want to choose a lower activity level and then track any additional
+        calories burned through exercise or other activities using logs or diaries—there are plenty available online.
+        For those of you who like to keep things simple, you can stick with the standard multipliers. I’ve even thrown
+        in a few extra categories for good measure, so you have some additional flexibility.
+    </p>
+
+    <p class="section-text">
+        Want to dig deeper into the science? Check out this <a href="https://www.fao.org/4/y5686e/y5686e07.htm#bm07.2"
+            target="_blank" class="styled-link">link</a> to the FAO’s detailed report on the subject. And hey, full
+        credit to Sailrabbit.com for letting me borrow some of their explanations on activity levels. They’ve done the
+        heavy lifting so you (and I) don’t have to!
+    </p>
+
+    <div class="credits">
+        <p>Credit to <a href="https://sailrabbit.com/" target="_blank" class="styled-link">Sailrabbit.com</a> for their
+            help in explaining
+            activity levels. They know their stuff!</p>
+    </div>
+</div>
+{% endblock %}

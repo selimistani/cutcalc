@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <body>
+        <nav>
+            <div class="brand">
+                <a href="/" style="color: white; text-decoration: none">CUTCALC</a>
+            </div>
+            <ul>
+                <li><a href="/bfp">BFP Calculation</a></li>
+                <li><a href="/calories">Calorie Estimation</a></li>
+                <li><a href="/faq">FAQ</a></li>
+            </ul>
+        </nav>
+
+        <!-- Content here -->
+        <div class="container">
+            {% block main %}
+            {% endblock %}
+        </div>
+    </body>
+
+</html>
