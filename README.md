@@ -1,5 +1,5 @@
 # Weight Loss Predictor Web Application
-#### Video Demo:  [Click here to watch the demo](<URL HERE>)
+#### Video Demo:  [Click here to watch the demo](<https://youtu.be/T4bN78vAVxI>)
 #### Description:
 
 This tool is designed to provide users with a visual and data-driven approach to understanding and predicting weight loss trajectories based on caloric intake and activity levels.
