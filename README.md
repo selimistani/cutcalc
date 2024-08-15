@@ -2,13 +2,12 @@
 #### Video Demo:  [Click here to watch the demo](<URL HERE>)
 #### Description:
 
-Welcome to the **Weight Loss Predictor Web Application**. This tool is designed to provide users with a visual and data-driven approach to understanding and predicting weight loss trajectories based on caloric intake and activity levels. Leveraging the Mifflin-St Jeor Equation and advanced data visualization techniques, this application offers both graphical and tabular insights into weight management.
+This tool is designed to provide users with a visual and data-driven approach to understanding and predicting weight loss trajectories based on caloric intake and activity levels.
 
 ## Features
 
 - **Dynamic Graph Generation**: Visualize your weight loss or gain over a specified period based on your input parameters.
 - **CSV Data Export**: Download detailed CSV files containing daily metrics for deeper analysis or record-keeping.
-- **Session-Based Data Storage**: Each user's session data is stored temporarily, ensuring privacy and data integrity.
 - **Responsive Design**: Accessible on various devices, ensuring a seamless user experience.
 
 ## How It Works
@@ -31,7 +30,6 @@ Welcome to the **Weight Loss Predictor Web Application**. This tool is designed 
 - **Back-End**: Python 3.10, Flask Framework
 - **Database**: SQLite3 for session-based data storage
 - **Data Visualization**: Matplotlib for generating dynamic graphs
-- **Hosting**: Deployed on PythonAnywhere
 
 ## Setup & Installation
 
@@ -82,20 +80,6 @@ Welcome to the **Weight Loss Predictor Web Application**. This tool is designed 
    - **Graph**: Visual representation of your weight trajectory.
    - **CSV**: Detailed daily data for personal records or further analysis.
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and create a pull request with your feature or bug fix. Ensure that your code adheres to the project's coding standards and includes appropriate documentation.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- **CS50 Course**: Inspiration and foundational knowledge.
-- **Flask**: For providing an excellent web framework.
-- **Matplotlib**: For the powerful data visualization capabilities.
-
 ---
 
-*For any questions or feedback, please contact [your.email@example.com](mailto:your.email@example.com).*
+*For any questions or feedback, please contact [selimserif123@gmail.com](mailto:selimserif123@gmail.com).*
